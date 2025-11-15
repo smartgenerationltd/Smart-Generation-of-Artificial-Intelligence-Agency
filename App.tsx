@@ -13,6 +13,8 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import VerifyEmail from './pages/VerifyEmail';
 import ProtectedRoute from './components/ProtectedRoute';
+import AiCreatives from './pages/AiCreatives';
+import AiWeekAfrica from './pages/AiWeekAfrica';
 
 const App: React.FC = () => {
     return (
@@ -23,6 +25,8 @@ const App: React.FC = () => {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/services" element={<Services />} />
+                        <Route path="/services/ai-creatives" element={<AiCreatives />} />
+                        <Route path="/services/ai-week-africa" element={<AiWeekAfrica />} />
                         <Route path="/portfolio" element={<Portfolio />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/login" element={<Login />} />

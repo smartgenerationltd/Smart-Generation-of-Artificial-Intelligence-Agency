@@ -1,5 +1,6 @@
 
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { TRAINING_SESSIONS } from '../constants';
 import { TrainingSession } from '../types';
 
@@ -10,8 +11,12 @@ const TrainingCard: React.FC<{ session: TrainingSession }> = ({ session }) => (
             <span className="text-xs font-semibold px-2 py-1 bg-brand-green/20 text-brand-green rounded-full">{session.level}</span>
         </div>
         <p className="text-gray-400 mb-4">{session.description}</p>
-        <div className="flex justify-between items-center">
-            <p className="text-sm text-gray-300">Duration: {session.duration}</p>
+        <div className="border-t border-white/10 pt-4 mt-4 flex justify-between items-center">
+            <div>
+                 <p className="text-sm text-gray-300">Duration: 4 Hours</p>
+                 <p className="text-sm text-gray-300">Frequency: 3 days/week</p>
+                 <p className="text-xl font-bold mt-1">$100<span className="text-base font-normal text-gray-400">/month</span></p>
+            </div>
             <button className="px-4 py-2 bg-brand-green-darker text-white font-semibold rounded-lg text-sm hover:bg-opacity-90 transition-colors">
                 Book a Session
             </button>
@@ -21,8 +26,6 @@ const TrainingCard: React.FC<{ session: TrainingSession }> = ({ session }) => (
 
 
 const Services: React.FC = () => {
-    const [activeTab, setActiveTab] = useState('consulting');
-
     return (
         <div className="space-y-16">
             <header className="text-center">
@@ -43,7 +46,7 @@ const Services: React.FC = () => {
                 {/* AI Solutions Development */}
                 <section className="mt-20">
                     <h2 className="text-3xl font-bold mb-2 text-center bg-clip-text text-transparent bg-gradient-to-r from-brand-green to-brand-green-darker">AI Solutions Development</h2>
-                    <p className="text-center text-gray-400 mb-8">Ready to build? Tell us about your project.</p>
+                    <p className="text-center text-gray-400 mb-8">Ready to build? Our development services are available via a $100/month subscription.</p>
                     <div className="bg-white/5 border border-white/10 rounded-lg p-8 shadow-2xl">
                         <form className="space-y-6">
                             <div>
@@ -82,6 +85,18 @@ const Services: React.FC = () => {
                         </form>
                     </div>
                 </section>
+
+                 {/* AI SKILL FOR FUTURE GENERATION OF CREATIVES */}
+                <section className="mt-20">
+                    <h2 className="text-3xl font-bold mb-2 text-center bg-clip-text text-transparent bg-gradient-to-r from-brand-green to-brand-green-darker">AI Skill for Future Generation of Creatives</h2>
+                    <p className="text-center text-gray-400 mb-8">Join our dedicated program, running from January to June 2026, to master AI tools for creative industries. Cost: $100/month.</p>
+                    <div className="text-center">
+                        <Link to="/services/ai-creatives" className="inline-block px-8 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors shadow-lg">
+                            Learn More & Apply
+                        </Link>
+                    </div>
+                </section>
+
             </div>
         </div>
     );
