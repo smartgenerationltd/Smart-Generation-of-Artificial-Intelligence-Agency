@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { ChatIcon, EmailIcon, FacebookIcon, LinkedinIcon } from '../components/icons/Icons';
 
 const FAQItem: React.FC<{ q: string; a: string }> = ({ q, a }) => (
@@ -13,6 +14,32 @@ const FAQItem: React.FC<{ q: string; a: string }> = ({ q, a }) => (
 
 
 const Contact: React.FC = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+    const [successMessage, setSuccessMessage] = useState('');
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { id, value } = e.target;
+        setFormData(prev => ({ ...prev, [id]: value }));
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        const subject = encodeURIComponent(`New Message from ${formData.name} - SG_AI_Agency`);
+        const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+        window.location.href = `mailto:giniyomugabo@gmail.com?subject=${subject}&body=${body}`;
+        
+        setSuccessMessage("Thanks for your interested to support our programs. Thank You Once Again");
+        setFormData({
+            name: '',
+            email: '',
+            message: ''
+        });
+    };
+
     return (
         <div className="space-y-16">
             <header className="text-center">
@@ -24,18 +51,46 @@ const Contact: React.FC = () => {
                 {/* Contact Form */}
                 <div className="bg-white/5 border border-white/10 rounded-lg p-8">
                     <h2 className="text-2xl font-bold mb-6 flex items-center gap-3"><ChatIcon className="w-8 h-8 text-brand-green" /> Send us a Message</h2>
-                    <form className="space-y-6">
+                    
+                    {successMessage && (
+                        <div className="mb-6 p-4 bg-brand-green/20 border border-brand-green/50 rounded-lg text-white text-center">
+                            {successMessage}
+                        </div>
+                    )}
+
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
-                            <input type="text" id="name" className="w-full bg-brand-dark/50 border border-white/20 rounded-md px-3 py-2 text-white focus:ring-brand-green focus:border-brand-green transition" />
+                            <input 
+                                type="text" 
+                                id="name" 
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-brand-dark/50 border border-white/20 rounded-md px-3 py-2 text-white focus:ring-brand-green focus:border-brand-green transition" 
+                            />
                         </div>
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
-                            <input type="email" id="email" className="w-full bg-brand-dark/50 border border-white/20 rounded-md px-3 py-2 text-white focus:ring-brand-green focus:border-brand-green transition" />
+                            <input 
+                                type="email" 
+                                id="email" 
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-brand-dark/50 border border-white/20 rounded-md px-3 py-2 text-white focus:ring-brand-green focus:border-brand-green transition" 
+                            />
                         </div>
                         <div>
                             <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Message</label>
-                            <textarea id="message" rows={5} className="w-full bg-brand-dark/50 border border-white/20 rounded-md px-3 py-2 text-white focus:ring-brand-green focus:border-brand-green transition"></textarea>
+                            <textarea 
+                                id="message" 
+                                rows={5} 
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-brand-dark/50 border border-white/20 rounded-md px-3 py-2 text-white focus:ring-brand-green focus:border-brand-green transition"
+                            ></textarea>
                         </div>
                         <div className="text-right">
                             <button type="submit" className="px-6 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors shadow-lg">

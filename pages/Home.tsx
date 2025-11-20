@@ -76,9 +76,14 @@ We believe that the next generation should not only use technology but also shap
                     </p>
                 </div>
                 <div className="text-center flex-shrink-0">
-                    <Link to="/services/ai-week-africa" className="px-8 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors shadow-lg whitespace-nowrap">
-                        Learn More & Register
-                    </Link>
+                    <div className="flex flex-col sm:flex-row items-center gap-4">
+                        <Link to="/services/ai-week-africa" className="px-8 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors shadow-lg whitespace-nowrap">
+                            Learn More & Register
+                        </Link>
+                        <Link to="/contact" className="px-8 py-3 bg-white/10 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors shadow-lg whitespace-nowrap">
+                            Sponsor / Partner
+                        </Link>
+                    </div>
                 </div>
             </section>
 
@@ -93,10 +98,15 @@ We believe that the next generation should not only use technology but also shap
                     <p className="text-brand-green mt-2 font-semibold">Program Dates: January 2026 - June 2026</p>
                 </div>
                 <div className="text-center flex-shrink-0">
-                    <p className="text-2xl font-bold mb-2">$100<span className="text-base font-normal text-gray-400">/month</span></p>
-                    <Link to="/services/ai-creatives" className="px-8 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors shadow-lg whitespace-nowrap">
-                        Learn More & Apply
-                    </Link>
+                    <p className="text-2xl font-bold mb-4">$100<span className="text-base font-normal text-gray-400">/month</span></p>
+                    <div className="flex flex-col sm:flex-row items-center gap-4">
+                        <Link to="/services/ai-creatives" className="px-8 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors shadow-lg whitespace-nowrap">
+                            Learn More & Apply
+                        </Link>
+                        <Link to="/contact" className="px-8 py-3 bg-white/10 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors shadow-lg whitespace-nowrap">
+                            Sponsor / Partner
+                        </Link>
+                    </div>
                 </div>
             </section>
 
