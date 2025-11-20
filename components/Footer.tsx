@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
                     <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} SG_AI_Agency. All Rights Reserved.</p>
                     <div className="flex space-x-6">
                         <a href="https://www.facebook.com/GILBERTSTAR" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><FacebookIcon className="w-6 h-6" /></a>
-                        <a href="https://www.linkedin.com/in/gilbert-niyomugabo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><LinkedinIcon className="w-6 h-6" /></a>
+                        <a href="https://www.linkedin.com/in/gilbert-niyomugabo-a71983b4/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><LinkedinIcon className="w-6 h-6" /></a>
                         <a href="https://wa.me/250781121179" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><WhatsAppIcon className="w-6 h-6" /></a>
                     </div>
                 </div>

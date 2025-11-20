@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ChatIcon, EmailIcon, FacebookIcon, LinkedinIcon } from '../components/icons/Icons';
+import { ChatIcon, EmailIcon, FacebookIcon, LinkedinIcon, WhatsAppIcon } from '../components/icons/Icons';
 
 const FAQItem: React.FC<{ q: string; a: string }> = ({ q, a }) => (
     <details className="bg-white/5 p-4 rounded-lg cursor-pointer border border-white/10">
@@ -109,9 +109,13 @@ const Contact: React.FC = () => {
                                 <EmailIcon className="w-7 h-7 text-brand-green" />
                                 <span className="group-hover:underline">giniyomugabo@gmail.com</span>
                             </a>
-                            <a href="https://www.linkedin.com/in/gilbert-niyomugabo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                            <a href="https://wa.me/250781121179" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                                <WhatsAppIcon className="w-7 h-7 text-brand-green" />
+                                <span className="group-hover:underline">0781121179</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/gilbert-niyomugabo-a71983b4/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
                                 <LinkedinIcon className="w-7 h-7 text-brand-green" />
-                                <span className="group-hover:underline">/in/gilbert-niyomugabo</span>
+                                <span className="group-hover:underline">LinkedIn Profile</span>
                             </a>
                             <a href="https://www.facebook.com/GILBERTSTAR" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
                                 <FacebookIcon className="w-7 h-7 text-brand-green" />
